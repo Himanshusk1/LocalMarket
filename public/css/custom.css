@@ -1,0 +1,422 @@
+/* LocalMarket — Clean Indian Classifieds Marketplace Theme */
+:root {
+  --lm-primary: #002f34;
+  --lm-primary-dark: #001a1d;
+  --lm-primary-light: #09474e;
+  --lm-accent: #00a49f;
+  --lm-accent-hover: #008782;
+  --lm-sell-btn: #ffce32;
+  --lm-sell-btn-hover: #f5c01b;
+  --lm-bg: #f8f9fa;
+  --lm-card-bg: #ffffff;
+  --lm-border: #e2e8f0;
+  --lm-text: #002f34;
+  --lm-text-muted: #64748b;
+  --lm-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--lm-font);
+  background-color: var(--lm-bg);
+  color: var(--lm-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Primary Header */
+.lm-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--lm-border);
+  box-shadow: 0 1px 4px rgba(0, 47, 52, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.lm-brand {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--lm-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lm-brand-badge {
+  background-color: var(--lm-primary);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Location Selector */
+.lm-location-btn {
+  border: 1px solid #cbd5e1;
+  background-color: #fff;
+  color: var(--lm-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lm-location-btn:hover, .lm-location-btn:focus {
+  border-color: var(--lm-primary);
+}
+
+/* Header Search Form */
+.lm-search-bar {
+  display: flex;
+  flex: 1;
+  border: 2px solid var(--lm-primary);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.lm-search-bar input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 0.925rem;
+  padding: 8px 14px;
+  color: var(--lm-text);
+}
+
+.lm-search-bar input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.lm-search-btn {
+  background-color: var(--lm-primary);
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lm-search-btn:hover {
+  background-color: var(--lm-primary-light);
+}
+
+/* Distinct Sell Button (OLX Style) */
+.lm-sell-button {
+  background-color: #ffffff;
+  color: var(--lm-primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 4px solid;
+  border-image: linear-gradient(135deg, #ffce32 0%, #23e5db 50%, #002f34 100%) 1;
+  padding: 6px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(0, 47, 52, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lm-sell-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 47, 52, 0.18);
+  color: var(--lm-primary);
+}
+
+/* Secondary Category Strip */
+.lm-category-strip {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--lm-border);
+  padding: 8px 0;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.lm-cat-link {
+  color: var(--lm-text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: color 0.15s ease, background 0.15s ease;
+  display: inline-block;
+}
+
+.lm-cat-link:hover, .lm-cat-link.active {
+  color: var(--lm-accent);
+  background-color: #f1f5f9;
+}
+
+/* Listing Cards */
+.lm-card {
+  background: #ffffff;
+  border: 1px solid var(--lm-border);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.lm-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 47, 52, 0.08);
+  border-color: #cbd5e1;
+  color: inherit;
+}
+
+.lm-card-img-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 66.66%; /* 3:2 aspect ratio */
+  background-color: #f1f5f9;
+  overflow: hidden;
+}
+
+.lm-card-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s ease;
+}
+
+.lm-card:hover .lm-card-img {
+  transform: scale(1.02);
+}
+
+.lm-card-body {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.lm-card-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--lm-primary);
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.lm-card-title {
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 8px;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.7em;
+}
+
+.lm-card-footer {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.775rem;
+  color: var(--lm-text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lm-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  z-index: 2;
+}
+
+.lm-badge-featured {
+  background-color: #ffce32;
+  color: #002f34;
+}
+
+.lm-badge-service {
+  background-color: #00a49f;
+  color: #ffffff;
+}
+
+/* Category Grid on Home */
+.lm-cat-card {
+  background: #ffffff;
+  border: 1px solid var(--lm-border);
+  border-radius: 8px;
+  padding: 16px 12px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--lm-text);
+  transition: all 0.18s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.lm-cat-card:hover {
+  border-color: var(--lm-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 47, 52, 0.06);
+  color: var(--lm-accent);
+}
+
+.lm-cat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--lm-primary);
+  margin-bottom: 10px;
+  transition: all 0.18s ease;
+}
+
+.lm-cat-card:hover .lm-cat-icon {
+  background-color: #e0f2f1;
+  color: var(--lm-accent);
+}
+
+.lm-cat-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.lm-cat-count {
+  font-size: 0.75rem;
+  color: var(--lm-text-muted);
+}
+
+/* Details Page */
+.lm-details-img-main {
+  width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  background-color: #0f172a;
+  border-radius: 8px;
+}
+
+.lm-details-thumb {
+  width: 72px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.lm-details-thumb.active {
+  border-color: var(--lm-accent);
+}
+
+/* Seller Card */
+.lm-seller-box {
+  background: #ffffff;
+  border: 1px solid var(--lm-border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.lm-price-box {
+  background: #ffffff;
+  border: 1px solid var(--lm-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* Footer */
+.lm-footer {
+  background-color: #ebeeef;
+  border-top: 1px solid #d8dee2;
+  margin-top: 48px;
+  font-size: 0.85rem;
+}
+
+.lm-footer-bottom {
+  background-color: #002f34;
+  color: #fff;
+  padding: 16px 0;
+  font-size: 0.8rem;
+}
+
+/* Forms */
+.form-control:focus, .form-select:focus {
+  border-color: var(--lm-primary);
+  box-shadow: 0 0 0 0.2rem rgba(0, 47, 52, 0.15);
+}
+
+.btn-primary {
+  background-color: var(--lm-primary);
+  border-color: var(--lm-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--lm-primary-light);
+  border-color: var(--lm-primary-light);
+}
+
+/* Breadcrumbs */
+.breadcrumb-item a {
+  color: var(--lm-text-muted);
+  text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--lm-primary);
+  text-decoration: underline;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767.98px) {
+  .lm-brand {
+    font-size: 1.3rem;
+  }
+  .lm-sell-button {
+    padding: 4px 12px;
+    font-size: 0.8rem;
+  }
+}
